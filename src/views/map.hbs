@@ -1,0 +1,21 @@
+<center>
+  <br><br>
+  <h4>Адреса секций по футболу среди женских команд</h4><br>
+  <h6>Пока только в Москве, но скоро мы добавим адреса по России</h6><br>
+  <div data-container method="POST" action="/map">
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <br><br>
+    </div>
+
+
+<div class="addresscontainer">
+{{#if address}}
+{{#each address}}
+<p class="divider">___________</p>
+<h6>{{this.hint}}</h6>
+<p>{{this.balloon}}</p>
+<br>
+</div>
+{{/each}}
+{{/if}}
+</center>

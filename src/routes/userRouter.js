@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
+const Player = require('../models/player.model');
 
 const saltRound = 10;
 
@@ -52,5 +53,24 @@ router.post('/signin', async (req, res) => {
 router.get('/signin', async (req, res) => {
   res.render('signin');
 });
+
+router.get('/account', async (req, res) => {
+  res.render('addplayer');
+});
+
+router.post('/account', async (req, res) => {
+  const {
+    img, name, birthdate, nationality, height, position, club, trophy, transfer,
+  } = req.body;
+  const newPlayer = await Player.create({
+    img, name, birthdate, nationality, height, position, club, trophy, transfer,
+  });
+  if (newPlayer) {
+    return res.redirect('/players');
+  }
+  return res.status(418).redirect('/item/add');
+});
+
+
 
 module.exports = router;

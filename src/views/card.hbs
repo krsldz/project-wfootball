@@ -1,0 +1,22 @@
+<div data-accountcontainer>
+  <center>
+    {{#if player}}
+    <div data-id="{{player._id}}" class="card" style="width: 50rem">
+      <img src="{{player.img}}" class="card-img-top" alt="{{player.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{player.name}}</h5>
+        <p class="card-birthdate">Дата рождения: {{player.birthdate}}</p>
+        <p class="card-nationality">Национальность: {{player.nationality}}</p>
+        {{!-- <p class="card-nickname">Прозвища: {{player.nickname}}</p> --}}
+        <p class="card-height">Рост: {{player.height}} см</p>
+        <p class="card-club">Клуб: {{player.club}}</p>
+        <p class="card-position">Позиция: {{player.position}}</p>
+        <p class="card-transfer">Трансферная стоимость: {{player.transfer}}</p>
+        <p class="card-trophy">Награды: {{player.trophy}}</p>
+         {{checkId id}}
+        <hr>
+      </div>
+      {{/if}}
+    </div>
+  </center>
+</div>

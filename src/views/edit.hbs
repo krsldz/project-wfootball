@@ -1,0 +1,44 @@
+<center>
+<h5>Отредактировать карточку</h5>
+</center>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            {{#if player}}
+            <form name="editform" id="{{player._id}}">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="title" value="{{player.name}}" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="birthdate" class="form-control" placeholder="art" required value="{{player.birthdate}}">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="nationality" rows="3" placeholder="description">{{player.nationality}}</textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="img" class="form-control"
+                           placeholder="link to photo" value="{{player.img}}" required>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="number" name="height" class="form-control" placeholder="price" value="{{player.height}}" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="position" class="form-control" placeholder="State" value="{{player.position}}" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="club" class="form-control" placeholder="State" value="{{player.club}}" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="trophy" class="form-control" placeholder="State" value="{{player.trophy}}" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="transfer" class="form-control" placeholder="State" value="{{player.transfer}}" required>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-secondary">изменить</button>
+                </div>
+            {{/if}}
+        </div>
+    </div>

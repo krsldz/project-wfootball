@@ -1,0 +1,43 @@
+<center><br><h5>Добавить карточку футболистки</h5></center> 
+<div class="container h-100">
+  <br><br>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <form class="signup-form" action="/user/account" method="post">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="имя игрока" required>
+                </div>   
+                 <div class="mb-3">
+                <input name="birthdate" type="date" class="form-control" placeholder="дата рождения">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="img" class="form-control"
+                           placeholder="ссылка на фото" required>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="number" name="height" class="form-control" placeholder="рост" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="nationality" class="form-control" placeholder="национальность" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="position" class="form-control" placeholder="позиция на поле" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="club" class="form-control" placeholder="клуб" required>
+                    </div>
+                     <div class="col">
+                        <input type="text" name="transfer" class="form-control" placeholder="трансферная стоимость" required>
+                    </div>
+                     <div class="form-group">
+                    <textarea class="form-control" name="trophy" rows="3" placeholder="награды"></textarea>
+                </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-secondary">добавить игрока</button>
+                </div>
+                <br><br>
+            </form>
+        </div>
+    </div>

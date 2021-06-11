@@ -1,0 +1,19 @@
+<center>
+<br>
+<h5>Турниры</h5>
+<br>
+<div data-container>
+{{#if tour}}
+{{#each tour}}
+<div data-id="{{this._id}}" class="card text-center" style="width: 18rem;">
+    <img src="{{this.img}}" class="card-img-top" alt="{{this.title}}">
+    <div class="card-body ">
+        <h5 name="title" class="card-title">{{this.title}}</h5>
+        <button class ="readmore">прочитать</button>
+    </div>
+</div>
+<br>
+{{/each}}
+{{/if}}
+</div>
+</center>

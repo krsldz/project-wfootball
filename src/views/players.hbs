@@ -1,0 +1,21 @@
+<center>
+  <br>
+<h3>Карточки футболисток</h3>
+<br><br>
+<div data-container>
+{{#if player}}
+{{#each player}}
+<div data-id="{{this._id}}" class="card text-center" style="width: 18rem;">
+    <img src="{{this.img}}" class="card-img-top" alt="{{this.name}}">
+    <div class="card-body ">
+        <h5 name="name" class="card-title">{{this.name}}</h5>
+        <p name="position" class="card-position">Позиция на поле: {{this.position}}</p>
+        <p name="club" class="card-club">Клуб: {{this.club}}</p>
+        <button class ="viewmore">подробнее</button>
+    </div>
+</div>
+<br>
+{{/each}}
+{{/if}}
+</div>
+</center>

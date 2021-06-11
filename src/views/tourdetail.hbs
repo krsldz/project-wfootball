@@ -1,0 +1,13 @@
+<div data-container>
+  <center>
+    {{#if tour}}
+    <div data-id="{{tour._id}}" class="card" style="width: 50rem">
+      <img src="{{tour.img}}" class="card-img-top" alt="{{tour.title}}">
+      <div class="card-body">
+        <h5 name="title" class="card-title">{{tour.title}}</h5>
+        <p name="description" class="card-birthdate">{{tour.description}}</p>
+      </div>
+      {{/if}}
+    </div>
+  </center>
+</div>

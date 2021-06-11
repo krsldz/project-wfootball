@@ -5,9 +5,11 @@ const hbs = require('hbs');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 // const secretKey = require('crypto').randomBytes(64).toString('hex');
-const connect = require('./src/db/db');
+const { connect } = require('./src/db/db');
 const indexRouter = require('./src/routes/indexRouter');
 const userRouter = require('./src/routes/userRouter');
+const playerRouter = require('./src/routes/playerRouter');
+const tournamentRouter = require('./src/routes/tournamentRouter');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
@@ -35,6 +37,12 @@ const sessionParser = session({
 });
 
 hbs.registerPartials(path.join(process.env.PWD, 'src', 'views', 'partials'));
+hbs.registerHelper('checkId', (userId) => {
+  if (userId) {
+    return new hbs.SafeString(`<button class="editbutton">edit</button>
+    <button class="deletebutton">delete</button>`);
+  }
+});
 
 app.use(sessionParser);
 app.use(morgan('dev'));
@@ -50,6 +58,8 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
+app.use('/players', playerRouter);
+app.use('/tournaments', tournamentRouter);
 
 app.listen(PORT, () => {
   console.log('Server started on PORT', PORT);
